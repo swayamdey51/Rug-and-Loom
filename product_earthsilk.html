@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Silk Minimalist | Rug & Loom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        img { background-color: #e7e5e4; }
+        .tab-btn { border-bottom: 2px solid transparent; transition: all 0.2s; }
+        .tab-btn.active { border-bottom: 2px solid #92400e; color: #92400e; }
+    </style>
+</head>
+<body class="bg-[#FCFAF7] text-stone-800 antialiased">
+    <div class="bg-stone-900 text-stone-100 text-[11px] uppercase tracking-[0.2em] py-2.5 text-center font-semibold">
+        Heritage craftsmanship delivered worldwide • Free Design Consultation
+    </div>
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="http://127.0.0.1:5001/" class="text-2xl font-serif font-bold tracking-tighter text-stone-900">Rug<span class="text-amber-700">&</span>Loom</a>
+                <div class="hidden md:flex space-x-10 text-sm font-medium tracking-wide">
+                    <a href="http://127.0.0.1:5001/traditional" class="text-stone-600 hover:text-amber-800 transition">Traditional</a>
+                    <a href="http://127.0.0.1:5001/contemporary" class="text-stone-600 hover:text-amber-800 transition">Contemporary</a>
+                    <a href="http://127.0.0.1:5001/kilims" class="text-stone-600 hover:text-amber-800 transition">Kilims</a>
+                    <a href="http://127.0.0.1:5001/bespoke" class="text-stone-600 hover:text-amber-800 transition">Bespoke</a>
+                </div>
+                <a href="http://127.0.0.1:5001/cart" class="text-stone-600 hover:text-stone-900 relative py-2">
+                    <i class="fas fa-shopping-bag text-lg"></i>
+                    <span id="cart-count" class="absolute top-0 -right-2 bg-red-600 text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+ 
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-6 py-4 text-xs text-stone-400">
+        <a href="http://127.0.0.1:5001/" class="hover:text-stone-600">Home</a>
+        <span class="mx-2">›</span>
+        <a href="http://127.0.0.1:5001/contemporary" class="hover:text-stone-600">Contemporary</a>
+        <span class="mx-2">›</span>
+        <span class="text-stone-600">Earth Silk Minimalist</span>
+    </div>
+ 
+    <!-- Product -->
+    <section class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-16 reveal">
+        <div>
+            <div class="aspect-[4/5] overflow-hidden bg-white shadow-lg">
+                <img src="http://127.0.0.1:5001/images/Carpet5.jpg" alt="Earth Silk Minimalist" class="w-full h-full object-cover">
+            </div>
+        </div>
+        <div class="flex flex-col justify-center">
+            <p class="text-xs uppercase tracking-[0.3em] text-amber-700 mb-3">Modern Silk · Hand-Tufted</p>
+            <h1 class="text-4xl font-serif mb-4 leading-tight">Earth Silk<br>Minimalist</h1>
+            <div class="flex items-baseline gap-4 mb-6">
+                <span class="text-3xl font-serif text-amber-800 font-bold">&#8377;1,89,000</span>
+                <span class="text-xs text-stone-400 uppercase tracking-widest">Incl. of all taxes</span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-8 bg-white border border-stone-100 p-5">
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Size</p>
+                    <p class="text-sm font-medium">5 × 8 ft</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Material</p>
+                    <p class="text-sm font-medium">Himalayan Silk & Wool Blend</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Weave Type</p>
+                    <p class="text-sm font-medium">Hand-Tufted</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Weaving Time</p>
+                    <p class="text-sm font-medium">~5 Months</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Origin</p>
+                    <p class="text-sm font-medium">Chamoli, Uttarakhand</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Pile Height</p>
+                    <p class="text-sm font-medium">6mm (Low)</p>
+                </div>
+            </div>
+            <button onclick="addToCart()" id="atc-btn" class="w-full bg-stone-900 text-white py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-amber-800 transition mb-4">
+                <i class="fas fa-shopping-bag mr-2"></i> Add to Cart
+            </button>
+            <p class="text-center text-xs text-stone-400 flex items-center justify-center gap-2 mb-8">
+                <i class="fas fa-truck"></i> Free delivery · <i class="fas fa-undo"></i> 30-day returns
+            </p>
+        </div>
+    </section>
+ 
+    <!-- Story Tabs -->
+    <section class="max-w-7xl mx-auto px-6 pb-20 reveal">
+        <div class="border-b border-stone-200 flex gap-8 mb-8">
+            <button class="tab-btn active pb-3 text-sm font-medium" onclick="switchTab('story', this)">The Story</button>
+            <button class="tab-btn pb-3 text-sm font-medium text-stone-400" onclick="switchTab('craft', this)">The Craft</button>
+            <button class="tab-btn pb-3 text-sm font-medium text-stone-400" onclick="switchTab('community', this)">The Community</button>
+            <button class="tab-btn pb-3 text-sm font-medium text-stone-400" onclick="switchTab('care', this)">Care Guide</button>
+        </div>
+ 
+        <!-- Story Tab -->
+        <div id="tab-story" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-2xl font-serif mb-4">Silence Woven into Silk</h2>
+                <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                    The Earth Silk Minimalist was born from a conversation between a master weaver and an architect — both from Chamoli, both seeking the same thing: a carpet that disappears into a room while making it feel complete. The result is a piece of rare restraint, where the beauty lies not in what is shown but in what is held back.
+                </p>
+                <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                    The palette — warm ecru, raw umber, and the faintest blush of burnt sienna — is derived entirely from the mineral-rich soils and river clays of the Pindar Valley, a tributary of the Alaknanda River that runs through the heart of Chamoli. These are the colours of the Himalayan earth at dawn, before the sun fully rises.
+                </p>
+                <p class="text-stone-500 text-sm leading-relaxed">
+                    The silk used in this carpet is sourced from the mulberry silk farms of Uttarkashi — less than 200km from the weaving village — making this one of the few truly local luxury textiles produced entirely within a single mountain region.
+                </p>
+            </div>
+            <div class="bg-white border border-stone-100 p-8">
+                <h3 class="text-lg font-serif mb-6">Why &#8377;1,89,000?</h3>
+                <div class="space-y-4">
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-gem text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">Himalayan Silk Content</p>
+                            <p class="text-xs text-stone-400">True silk from Uttarkashi mulberry farms is extraordinarily rare. It gives this carpet its characteristic sheen that changes with the angle of light.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-palette text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">Mineral Earth Dyes</p>
+                            <p class="text-xs text-stone-400">The earthy tones are achieved using iron-rich clay and ochre minerals hand-ground and processed by the dye master. These pigments are more stable than plant dyes and will not fade for decades.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-clock text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">5 Months of Skilled Labour</p>
+                            <p class="text-xs text-stone-400">Hand-tufting at this quality level requires the same skill as hand-knotting. The uniform pile and perfect texture take years of training to achieve.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-award text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">GI Tag Eligible Material</p>
+                            <p class="text-xs text-stone-400">The silk used is from a GI-tagged (Geographical Indication) source — a legal certification that it can only come from this specific Himalayan region.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Craft Tab -->
+        <div id="tab-craft" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">1</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Silk Reeling</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">Raw silk cocoons from Uttarkashi are boiled and reeled by hand onto wooden spools. A single cocoon yields up to 1,500 metres of continuous silk thread — finer than human hair.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">2</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Blending with Wool</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">The silk is hand-blended with fine Merino wool at a 40:60 ratio. This blend gives the carpet both the lustre of silk and the durability of wool — a combination rare at this price point.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">3</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Earth Dyeing</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">Clay from the Pindar riverbank is processed into a mordant-dye solution. The yarn is immersed for 48 hours, producing the signature warm earth tones that are unique to this valley's mineral composition.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">4</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Hand Tufting</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">Using a hand-held tufting gun guided by a paper stencil, the weaver punches loops of yarn through a primary backing stretched on a frame. The pattern emerges row by row, with the weaver adjusting tension by feel.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">5</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Latex Backing</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">Natural latex is applied to the back to lock every tuft permanently in place. A secondary cotton backing is then hand-stitched on. This double-backing system ensures the carpet will not shed or warp.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">6</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Hand Carving</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">The finished pile is hand-carved with scissors to create subtle texture variations and depth. This is the step that separates a master-made carpet from a machine copy — no two are identical.</p>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Community Tab -->
+        <div id="tab-community" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-2xl font-serif mb-4">The Silk Weavers of Pindar Valley</h2>
+                    <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                        The Earth Silk Minimalist is the product of a unique collaboration between two communities: the silk farmers of Uttarkashi and the carpet weavers of the Pindar Valley in Chamoli. This partnership was established by Rug & Loom in 2019 to create a supply chain that is entirely local, traceable, and fair.
+                    </p>
+                    <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                        The Pindar Valley Weavers' Collective was formed in 2003 by Meena Bisht, a schoolteacher who recognised that young women in the valley were leaving for cities because traditional weaving could not sustain a livelihood. She began training a group of 8 women in modern tufting techniques while preserving traditional Garhwali patterns.
+                    </p>
+                    <p class="text-stone-500 text-sm leading-relaxed mb-6">
+                        Today the collective has grown to 31 members. Their work has been featured in the Crafts Council of India's annual exhibition three times, and two of their members have received the National Award for Master Craftsperson from the Ministry of Textiles.
+                    </p>
+                    <div class="bg-amber-50 border border-amber-100 p-5">
+                        <p class="text-xs uppercase tracking-widest text-amber-700 font-bold mb-2">Your Purchase Impact</p>
+                        <p class="text-sm text-stone-600">This purchase supports both silk farming families in Uttarkashi and weaving families in Chamoli — two mountain communities, one carpet.</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-white border border-stone-100 p-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-user text-stone-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-sm mb-1">Lead Weaver: Meena Bisht</p>
+                                <p class="text-xs text-stone-400 leading-relaxed">Founder of the Pindar Valley Weavers' Collective and National Award recipient. Meena developed the earth-dyeing technique used in this carpet after 3 years of experimenting with local river clays. She teaches at the collective every morning before weaving.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-stone-100 p-6">
+                        <p class="text-xs uppercase tracking-widest text-stone-400 mb-3">Collective Stats</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">31</p><p class="text-xs text-stone-400">Active Weavers</p></div>
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">21</p><p class="text-xs text-stone-400">Years Operating</p></div>
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">3×</p><p class="text-xs text-stone-400">National Exhibition</p></div>
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">2</p><p class="text-xs text-stone-400">National Award Winners</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Care Tab -->
+        <div id="tab-care" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-2xl font-serif mb-6">Caring for Silk & Wool</h2>
+                    <div class="space-y-5">
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Vacuum with Care</p>
+                                <p class="text-xs text-stone-400">Vacuum weekly along the pile direction on the lowest suction setting. Silk fibres are delicate — never pull against the pile.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Use a Rug Pad</p>
+                                <p class="text-xs text-stone-400">Always place a breathable rug pad underneath. This prevents slippage, reduces wear on the backing, and allows air circulation to prevent mould.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Protect from Moisture</p>
+                                <p class="text-xs text-stone-400">Silk absorbs moisture quickly. In high-humidity rooms, ensure good ventilation. If the carpet gets wet, dry flat immediately — never hang to dry as it may distort.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-times text-red-400 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">No Steam Cleaning</p>
+                                <p class="text-xs text-stone-400">Steam will permanently damage silk fibres and loosen the latex backing. Cold water hand-cleaning only.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-times text-red-400 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Keep Away from Pets</p>
+                                <p class="text-xs text-stone-400">Silk fibres are particularly attractive to pets. Pet claws can snag and pull individual tufts. We recommend placing in low-traffic or pet-free areas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white border border-stone-100 p-8">
+                    <h3 class="font-serif text-lg mb-4">Silk Specific Notes</h3>
+                    <p class="text-sm text-stone-500 leading-relaxed mb-6">Silk carpets have a directional sheen — they will appear lighter from one direction and darker from another. This is not a defect; it is the natural property of silk fibres refracting light. Place the carpet so the lighter direction faces the room entrance for the most flattering appearance.</p>
+                    <div class="bg-stone-50 p-4 mb-6">
+                        <p class="text-xs uppercase tracking-widest text-stone-400 mb-2">Annual Care Tip</p>
+                        <p class="text-xs text-stone-500 leading-relaxed">Once a year, take the carpet outside on a dry, overcast day (not direct sun) and gently beat the back with a soft broom. This removes deep-seated dust and revives the pile without any risk of damage.</p>
+                    </div>
+                    <p class="text-xs text-stone-400">This carpet is covered by our Lifetime Structural Guarantee. Any tuft loss or backing failure will be repaired free of charge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 text-center text-xs">
+            <p>&copy; 2026 Rug & Loom Heritage Carpets. All rights reserved.</p>
+        </div>
+    </footer>
+ 
+    <script>
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+ 
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('rugCart')) || [];
+            document.getElementById('cart-count').textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+        }
+ 
+        function switchTab(tab, btn) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('active'); el.classList.add('text-stone-400'); });
+            document.getElementById('tab-' + tab).classList.remove('hidden');
+            btn.classList.add('active');
+            btn.classList.remove('text-stone-400');
+        }
+ 
+        function addToCart() {
+            let cart = JSON.parse(localStorage.getItem('rugCart')) || [];
+            const existing = cart.find(item => item.name === 'Earth Silk Minimalist');
+            if (existing) { existing.quantity++; } else {
+                cart.push({ name: 'Earth Silk Minimalist', price: 189000, img: 'http://127.0.0.1:5001/images/Carpet5.jpg', quantity: 1 });
+            }
+            localStorage.setItem('rugCart', JSON.stringify(cart));
+            updateCartCount();
+            const btn = document.getElementById('atc-btn');
+            btn.textContent = '✓ Added to Cart';
+            btn.style.backgroundColor = '#92400e';
+            setTimeout(() => { btn.innerHTML = '<i class="fas fa-shopping-bag mr-2"></i> Add to Cart'; btn.style.backgroundColor = ''; }, 2000);
+        }
+ 
+        updateCartCount();
+    </script>
+</body>
+</html>

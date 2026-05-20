@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sultani Blue Hand-Knotted | Rug & Loom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        img { background-color: #e7e5e4; }
+        .tab-btn { border-bottom: 2px solid transparent; transition: all 0.2s; }
+        .tab-btn.active { border-bottom: 2px solid #92400e; color: #92400e; }
+    </style>
+</head>
+<body class="bg-[#FCFAF7] text-stone-800 antialiased">
+    <div class="bg-stone-900 text-stone-100 text-[11px] uppercase tracking-[0.2em] py-2.5 text-center font-semibold">
+        Heritage craftsmanship delivered worldwide • Free Design Consultation
+    </div>
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="http://127.0.0.1:5001/" class="text-2xl font-serif font-bold tracking-tighter text-stone-900">Rug<span class="text-amber-700">&</span>Loom</a>
+                <div class="hidden md:flex space-x-10 text-sm font-medium tracking-wide">
+                    <a href="http://127.0.0.1:5001/traditional" class="text-stone-600 hover:text-amber-800 transition">Traditional</a>
+                    <a href="http://127.0.0.1:5001/contemporary" class="text-stone-600 hover:text-amber-800 transition">Contemporary</a>
+                    <a href="http://127.0.0.1:5001/kilims" class="text-stone-600 hover:text-amber-800 transition">Kilims</a>
+                    <a href="http://127.0.0.1:5001/bespoke" class="text-stone-600 hover:text-amber-800 transition">Bespoke</a>
+                </div>
+                <a href="http://127.0.0.1:5001/cart" class="text-stone-600 hover:text-stone-900 relative py-2">
+                    <i class="fas fa-shopping-bag text-lg"></i>
+                    <span id="cart-count" class="absolute top-0 -right-2 bg-red-600 text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+ 
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-6 py-4 text-xs text-stone-400">
+        <a href="http://127.0.0.1:5001/" class="hover:text-stone-600">Home</a>
+        <span class="mx-2">›</span>
+        <a href="http://127.0.0.1:5001/traditional" class="hover:text-stone-600">Traditional</a>
+        <span class="mx-2">›</span>
+        <span class="text-stone-600">Sultani Blue Hand-Knotted</span>
+    </div>
+ 
+    <!-- Product -->
+    <section class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-16 reveal">
+        <!-- Image -->
+        <div>
+            <div class="aspect-[4/5] overflow-hidden bg-white shadow-lg">
+                <img src="http://127.0.0.1:5001/images/Carpet4.jpg" alt="Sultani Blue Hand-Knotted" class="w-full h-full object-cover">
+            </div>
+        </div>
+ 
+        <!-- Details -->
+        <div class="flex flex-col justify-center">
+            <p class="text-xs uppercase tracking-[0.3em] text-amber-700 mb-3">Heritage Persian · Hand-Knotted</p>
+            <h1 class="text-4xl font-serif mb-4 leading-tight">Sultani Blue<br>Hand-Knotted</h1>
+ 
+            <div class="flex items-baseline gap-4 mb-6">
+                <span class="text-3xl font-serif text-amber-800 font-bold">&#8377;2,45,000</span>
+                <span class="text-xs text-stone-400 uppercase tracking-widest">Incl. of all taxes</span>
+            </div>
+ 
+            <!-- Specs -->
+            <div class="grid grid-cols-2 gap-4 mb-8 bg-white border border-stone-100 p-5">
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Size</p>
+                    <p class="text-sm font-medium">6 × 9 ft</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Material</p>
+                    <p class="text-sm font-medium">Pure New Zealand Wool</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Knot Density</p>
+                    <p class="text-sm font-medium">120 Knots per sq. inch</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Weaving Time</p>
+                    <p class="text-sm font-medium">~8 Months</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Origin</p>
+                    <p class="text-sm font-medium">Chamoli, Uttarakhand</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Pile Height</p>
+                    <p class="text-sm font-medium">8mm (Medium)</p>
+                </div>
+            </div>
+ 
+            <button onclick="addToCart()" class="w-full bg-stone-900 text-white py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-amber-800 transition mb-4" id="atc-btn">
+                <i class="fas fa-shopping-bag mr-2"></i> Add to Cart
+            </button>
+            <p class="text-center text-xs text-stone-400 flex items-center justify-center gap-2 mb-8">
+                <i class="fas fa-truck"></i> Free delivery · <i class="fas fa-undo"></i> 30-day returns
+            </p>
+        </div>
+    </section>
+ 
+    <!-- Story Tabs -->
+    <section class="max-w-7xl mx-auto px-6 pb-20 reveal">
+        <div class="border-b border-stone-200 flex gap-8 mb-8">
+            <button class="tab-btn active pb-3 text-sm font-medium" onclick="switchTab('story', this)">The Story</button>
+            <button class="tab-btn pb-3 text-sm font-medium text-stone-400" onclick="switchTab('craft', this)">The Craft</button>
+            <button class="tab-btn pb-3 text-sm font-medium text-stone-400" onclick="switchTab('community', this)">The Community</button>
+            <button class="tab-btn pb-3 text-sm font-medium text-stone-400" onclick="switchTab('care', this)">Care Guide</button>
+        </div>
+ 
+        <!-- Story Tab -->
+        <div id="tab-story" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-2xl font-serif mb-4">A Carpet Born from the Himalayas</h2>
+                <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                    Nestled at an altitude of over 3,000 metres in the Chamoli District of Uttarakhand, where the air is thin and the winters are brutal, the Sultani Blue was conceived. The deep indigo tones of this carpet are not a designer's choice — they are the colours of the night sky over the Nanda Devi peaks, observed and absorbed by weavers who have lived beneath them for generations.
+                </p>
+                <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                    The geometric medallion at its centre is inspired by the rangoli patterns drawn at the doorsteps of Garhwali homes during Makar Sankranti — a festival of harvest and gratitude. Each border detail echoes the carved wooden lattice work found on the ancient temples of Gopeshwar.
+                </p>
+                <p class="text-stone-500 text-sm leading-relaxed">
+                    This is not just a carpet. It is a portable piece of the Himalayan highlands — a fragment of a culture that has survived centuries of isolation, harsh climate, and modernisation, yet continues to produce some of the most refined textile art in the world.
+                </p>
+            </div>
+            <div class="bg-white border border-stone-100 p-8">
+                <h3 class="text-lg font-serif mb-6">Why &#8377;2,45,000?</h3>
+                <div class="space-y-4">
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-clock text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">8 Months of Labour</p>
+                            <p class="text-xs text-stone-400">Two master weavers working 8 hours a day for 240 days to complete this single piece.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-star text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">120 Knots Per Square Inch</p>
+                            <p class="text-xs text-stone-400">Over 1.5 million individual knots tied by hand. Each knot is cut and levelled with precision scissors.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-leaf text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">Natural Dyes Only</p>
+                            <p class="text-xs text-stone-400">The indigo blue is derived from the Indigofera tinctoria plant. No synthetic chemicals touch this carpet.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-infinity text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">Lasts 100+ Years</p>
+                            <p class="text-xs text-stone-400">A well-maintained hand-knotted carpet appreciates in value over decades. This is an heirloom, not a purchase.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Craft Tab -->
+        <div id="tab-craft" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">1</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Wool Selection</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">Only the finest clip of New Zealand Merino wool is used — soft, lustrous, and with a natural crimp that gives the carpet its characteristic sheen. The wool is hand-washed in Himalayan spring water before spinning.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">2</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Natural Dyeing</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">The yarn is dyed using plant-based and mineral dyes in copper vessels over wood fires. The indigo is fermented for 72 hours before the yarn is immersed. This process, unchanged for 400 years, produces colours that deepen beautifully with age.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">3</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Hand Knotting</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">The Persian Senneh knot is used — a single asymmetric knot that allows for finer detail and higher knot density. The weaver reads from a hand-drawn talim (grid chart) and ties each knot individually around the warp threads.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">4</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Washing & Finishing</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">Once off the loom, the carpet is washed in cold running water, stretched to exact dimensions, and sun-dried for three days. The pile is then hand-sheared to a uniform height using traditional hand scissors.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">5</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Quality Inspection</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">Every carpet undergoes a 47-point quality check by our master inspector. Knot density, pile uniformity, colour consistency, and structural integrity are all verified before the carpet is approved for sale.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">6</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Certificate of Authenticity</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">Each carpet comes with a handwritten certificate bearing the name of the lead weaver, the date of completion, the knot count, and the dye sources used. A QR code links to a digital provenance record.</p>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Community Tab -->
+        <div id="tab-community" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-2xl font-serif mb-4">The Weavers of Chamoli</h2>
+                    <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                        The Sultani Blue was woven by the Rawat weaving cooperative in Gopeshwar, the administrative capital of Chamoli District, Uttarakhand. This cooperative was founded in 1987 by a group of 12 women who sought to preserve the dying art of Garhwali carpet weaving while creating sustainable livelihoods for mountain families.
+                    </p>
+                    <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                        Today, the cooperative employs 43 weavers — predominantly women between the ages of 22 and 60. Many are from households where weaving has been practised for four or five generations. The knowledge of pattern, knot, and dye is passed from mother to daughter, often without any written record.
+                    </p>
+                    <p class="text-stone-500 text-sm leading-relaxed mb-6">
+                        Rug & Loom works exclusively with this cooperative under a fair trade agreement. Weavers receive 60% of the final sale price — significantly above the industry standard of 15-20%. We also fund the cooperative's healthcare programme and contribute to a scholarship fund for weavers' children.
+                    </p>
+                    <div class="bg-amber-50 border border-amber-100 p-5">
+                        <p class="text-xs uppercase tracking-widest text-amber-700 font-bold mb-2">Your Purchase Impact</p>
+                        <p class="text-sm text-stone-600">By purchasing this carpet, you directly support 2 weaver families in Chamoli for approximately 4 months of income.</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-white border border-stone-100 p-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-user text-stone-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-sm mb-1">Lead Weaver: Savitri Devi Rawat</p>
+                                <p class="text-xs text-stone-400 leading-relaxed">Master weaver with 34 years of experience. Savitri learned the craft from her mother at age 12 and has since trained over 20 young weavers in the cooperative. She specialises in the Persian medallion pattern.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-stone-100 p-6">
+                        <p class="text-xs uppercase tracking-widest text-stone-400 mb-3">Cooperative Stats</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">43</p><p class="text-xs text-stone-400">Active Weavers</p></div>
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">36</p><p class="text-xs text-stone-400">Years Operating</p></div>
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">60%</p><p class="text-xs text-stone-400">Revenue to Weavers</p></div>
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">100%</p><p class="text-xs text-stone-400">Women-Led</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Care Tab -->
+        <div id="tab-care" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-2xl font-serif mb-6">Caring for Your Carpet</h2>
+                    <div class="space-y-5">
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Vacuum Gently</p>
+                                <p class="text-xs text-stone-400">Vacuum weekly in the direction of the pile using a low-suction setting. Never use a beater bar attachment — it damages the knots.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Rotate Every 6 Months</p>
+                                <p class="text-xs text-stone-400">Rotate 180° every 6 months to ensure even wear and prevent one area from fading due to sunlight exposure.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Blot Spills Immediately</p>
+                                <p class="text-xs text-stone-400">Blot (never rub) spills with a clean white cloth. For stubborn stains, use cold water and mild wool wash only.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-times text-red-400 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Avoid Direct Sunlight</p>
+                                <p class="text-xs text-stone-400">Prolonged direct sunlight will fade natural dyes. Use UV-filtering curtains if placing near a south-facing window.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-times text-red-400 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Never Machine Wash</p>
+                                <p class="text-xs text-stone-400">Machine washing will destroy the knot structure. Professional hand-washing every 3-5 years is recommended.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white border border-stone-100 p-8">
+                    <h3 class="font-serif text-lg mb-4">Professional Cleaning</h3>
+                    <p class="text-sm text-stone-500 leading-relaxed mb-6">We offer a complimentary professional cleaning service for all Rug & Loom carpets every 5 years. Simply contact us and we will arrange collection, cleaning at our Chamoli facility, and return delivery — all at no cost to you.</p>
+                    <div class="bg-stone-50 p-4 mb-6">
+                        <p class="text-xs uppercase tracking-widest text-stone-400 mb-2">Storage Instructions</p>
+                        <p class="text-xs text-stone-500 leading-relaxed">If storing, roll the carpet (never fold) pile-side inward around an acid-free tube. Wrap in breathable cotton muslin. Store in a cool, dry place. Never store in plastic — wool needs to breathe.</p>
+                    </div>
+                    <p class="text-xs text-stone-400">This carpet is covered by our Lifetime Structural Guarantee. Any knot failure or foundation damage will be repaired free of charge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 text-center text-xs">
+            <p>&copy; 2026 Rug & Loom Heritage Carpets. All rights reserved.</p>
+        </div>
+    </footer>
+ 
+    <script>
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+ 
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('rugCart')) || [];
+            document.getElementById('cart-count').textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+        }
+ 
+        function switchTab(tab, btn) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('active'); el.classList.add('text-stone-400'); });
+            document.getElementById('tab-' + tab).classList.remove('hidden');
+            btn.classList.add('active');
+            btn.classList.remove('text-stone-400');
+        }
+ 
+        function addToCart() {
+            let cart = JSON.parse(localStorage.getItem('rugCart')) || [];
+            const existing = cart.find(item => item.name === 'Sultani Blue Hand-Knotted');
+            if (existing) { existing.quantity++; } else {
+                cart.push({ name: 'Sultani Blue Hand-Knotted', price: 245000, img: 'http://127.0.0.1:5001/images/Carpet4.jpg', quantity: 1 });
+            }
+            localStorage.setItem('rugCart', JSON.stringify(cart));
+            updateCartCount();
+            const btn = document.getElementById('atc-btn');
+            btn.textContent = '✓ Added to Cart';
+            btn.style.backgroundColor = '#92400e';
+            setTimeout(() => { btn.innerHTML = '<i class="fas fa-shopping-bag mr-2"></i> Add to Cart'; btn.style.backgroundColor = ''; }, 2000);
+        }
+ 
+        updateCartCount();
+    </script>
+</body>
+</html>

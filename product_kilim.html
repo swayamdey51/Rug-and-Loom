@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomadic Geometric Kilim | Rug & Loom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        img { background-color: #e7e5e4; }
+        .tab-btn { border-bottom: 2px solid transparent; transition: all 0.2s; }
+        .tab-btn.active { border-bottom: 2px solid #92400e; color: #92400e; }
+    </style>
+</head>
+<body class="bg-[#FCFAF7] text-stone-800 antialiased">
+    <div class="bg-stone-900 text-stone-100 text-[11px] uppercase tracking-[0.2em] py-2.5 text-center font-semibold">
+        Heritage craftsmanship delivered worldwide • Free Design Consultation
+    </div>
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="http://127.0.0.1:5001/" class="text-2xl font-serif font-bold tracking-tighter text-stone-900">Rug<span class="text-amber-700">&</span>Loom</a>
+                <div class="hidden md:flex space-x-10 text-sm font-medium tracking-wide">
+                    <a href="http://127.0.0.1:5001/traditional" class="text-stone-600 hover:text-amber-800 transition">Traditional</a>
+                    <a href="http://127.0.0.1:5001/contemporary" class="text-stone-600 hover:text-amber-800 transition">Contemporary</a>
+                    <a href="http://127.0.0.1:5001/kilims" class="text-stone-600 hover:text-amber-800 transition">Kilims</a>
+                    <a href="http://127.0.0.1:5001/bespoke" class="text-stone-600 hover:text-amber-800 transition">Bespoke</a>
+                </div>
+                <a href="http://127.0.0.1:5001/cart" class="text-stone-600 hover:text-stone-900 relative py-2">
+                    <i class="fas fa-shopping-bag text-lg"></i>
+                    <span id="cart-count" class="absolute top-0 -right-2 bg-red-600 text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-6 py-4 text-xs text-stone-400">
+        <a href="http://127.0.0.1:5001/" class="hover:text-stone-600">Home</a>
+        <span class="mx-2">›</span>
+        <a href="http://127.0.0.1:5001/kilims" class="hover:text-stone-600">Kilims</a>
+        <span class="mx-2">›</span>
+        <span class="text-stone-600">Nomadic Geometric Kilim</span>
+    </div>
+
+    <section class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-16 reveal">
+        <div>
+            <div class="aspect-[4/5] overflow-hidden bg-white shadow-lg">
+                <img src="http://127.0.0.1:5001/images/Carpet7.jpg" alt="Nomadic Geometric Kilim" class="w-full h-full object-cover">
+            </div>
+        </div>
+        <div class="flex flex-col justify-center">
+            <p class="text-xs uppercase tracking-[0.3em] text-amber-700 mb-3">Tribal Kilims · Flat-Woven</p>
+            <h1 class="text-4xl font-serif mb-4 leading-tight">Nomadic Geometric<br>Kilim</h1>
+            <div class="flex items-baseline gap-4 mb-6">
+                <span class="text-3xl font-serif text-amber-800 font-bold">&#8377;68,000</span>
+                <span class="text-xs text-stone-400 uppercase tracking-widest">Incl. of all taxes</span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-8 bg-white border border-stone-100 p-5">
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Size</p>
+                    <p class="text-sm font-medium">4 × 6 ft</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Material</p>
+                    <p class="text-sm font-medium">Handspun Sheep Wool</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Weave Type</p>
+                    <p class="text-sm font-medium">Flat-Woven (Kilim)</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Weaving Time</p>
+                    <p class="text-sm font-medium">~6 Weeks</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Origin</p>
+                    <p class="text-sm font-medium">Kutch, Gujarat</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Pile Height</p>
+                    <p class="text-sm font-medium">Flat (0mm)</p>
+                </div>
+            </div>
+            <button onclick="addToCart()" id="atc-btn" class="w-full bg-stone-900 text-white py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-amber-800 transition mb-4">
+                <i class="fas fa-shopping-bag mr-2"></i> Add to Cart
+            </button>
+            <p class="text-center text-xs text-stone-400 flex items-center justify-center gap-2 mb-8">
+                <i class="fas fa-truck"></i> Free delivery · <i class="fas fa-undo"></i> 30-day returns
+            </p>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 pb-20 reveal">
+        <div class="border-b border-stone-200 flex gap-8 mb-8">
+            <button class="tab-btn active pb-3 text-sm font-medium" onclick="switchTab('story', this)">The Story</button>
+            <button class="tab-btn pb-3 text-sm font-medium text-stone-400" onclick="switchTab('craft', this)">The Craft</button>
+            <button class="tab-btn pb-3 text-sm font-medium text-stone-400" onclick="switchTab('community', this)">The Community</button>
+            <button class="tab-btn pb-3 text-sm font-medium text-stone-400" onclick="switchTab('care', this)">Care Guide</button>
+        </div>
+
+        <div id="tab-story" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-2xl font-serif mb-4">Geometry as Language</h2>
+                <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                    Before writing, nomadic tribes of Central Asia used textile geometry as a form of communication. Each diamond, chevron, and stepped border carried meaning — a family's lineage, a bride's prayers, a shepherd's record of the seasons. This kilim draws directly from that tradition, woven by the Rabari community of Kutch whose ancestors migrated from Sindh centuries ago carrying their loom patterns like an oral history in thread.
+                </p>
+                <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                    Unlike pile carpets, a kilim has no knots. The pattern is created entirely by the interlock of warp and weft threads — a process that demands the weaver hold the entire design in memory, row by row, without the aid of a drawn pattern. The geometric precision of this kilim is not drawn; it is calculated and memorised.
+                </p>
+                <p class="text-stone-500 text-sm leading-relaxed">
+                    The result is a textile that is simultaneously ancient and strikingly modern — a flat-woven surface whose bold geometry translates as naturally into a contemporary interior as it does in a traditional one. At &#8377;68,000, this is the most accessible piece in the New Arrivals collection, and one of the most extraordinary in terms of cultural depth.
+                </p>
+            </div>
+            <div class="bg-white border border-stone-100 p-8">
+                <h3 class="text-lg font-serif mb-6">Why &#8377;68,000?</h3>
+                <div class="space-y-4">
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-brain text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">Entirely from Memory</p>
+                            <p class="text-xs text-stone-400">Kilim weavers work without a pattern chart. Every geometric motif is held in the weaver's memory and executed row by row. This skill takes years to develop and cannot be replicated without it.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-dna text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">Living Cultural Heritage</p>
+                            <p class="text-xs text-stone-400">The Rabari kilim tradition of Kutch is listed by UNESCO as an endangered intangible cultural heritage. Purchasing a piece directly sustains its continuation.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-leaf text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">Natural Dyes, Zero Chemicals</p>
+                            <p class="text-xs text-stone-400">The vivid palette is achieved using pomegranate, indigo, turmeric, and iron-black — traditional Kutchi dye sources. No synthetic dyes or chemicals of any kind are used.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-wind text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">Dual-Use Versatility</p>
+                            <p class="text-xs text-stone-400">Kilims are flat-woven and reversible, usable on both sides. Significantly lighter than pile carpets — ideal for wall-hanging, layering, or use as a throw.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-craft" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">1</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Wool Preparation</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">Local Kachchi sheep wool is hand-washed in the Rann's brackish water — a traditional practice Rabari weavers believe conditions the fibre. It is then sun-dried, hand-carded, and hand-spun on a wooden takli (drop spindle) into yarn with a characteristic irregular twist.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">2</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Natural Dyeing</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">Each colour is dyed in a separate batch using traditional Kutchi recipes. Deep madder red uses pomegranate rind and alum mordant. Indigo is fermented in clay pots. Turmeric gives the golden ochre. Iron-rich water from old wells produces the charcoal-black.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">3</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Setting the Warp</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">Cotton warp threads are set on a horizontal ground loom — the traditional kilim loom of the Rabari community. The loom is pegged directly to the ground and the weaver sits in a pit below it, passing the weft shuttle through at eye level.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">4</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Interlocking Weft</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">The pattern is created using the interlocking weft technique: where two colour areas meet, the weft threads of each colour wrap around each other at the boundary, creating a continuous surface with no gaps. Far more technically demanding than the slit-weave technique used in many kilims.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">5</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Beating the Weft</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">After each weft pass, the weaver uses a wooden beater to press the thread firmly against the previous row. A consistent, firm beat is what gives this kilim its flat, smooth, durable surface.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">6</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Finishing & Fringing</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">The warp ends are twisted and knotted by hand to create the characteristic fringe. The kilim is then hand-washed in cold water and laid flat to dry in the sun. The finished piece is hand-signed by the weaver on the back before leaving the workshop.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-community" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-2xl font-serif mb-4">The Rabari Weavers of Kutch</h2>
+                    <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                        The Rabari are a pastoral community of Kutch, Gujarat, whose kilim-weaving tradition stretches back more than 400 years. Originally nomads who moved their flocks across the Rann of Kutch with the seasons, they wove kilims as functional objects — floor coverings, sleeping mats, animal trappings, and dowry gifts. Every piece told a family story.
+                    </p>
+                    <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                        The 2001 Bhuj earthquake devastated the Rabari weaving community, destroying workshops and looms across the region. The recovery of the craft over the following two decades is largely credited to organisations like the Khamir Craft Resource Centre, which provided infrastructure, training, and market access to displaced weavers.
+                    </p>
+                    <p class="text-stone-500 text-sm leading-relaxed mb-6">
+                        This kilim was woven by Deviben Rabari, a third-generation weaver from Bhujodi village who learned the craft from her grandmother. Rug & Loom sources exclusively from the Bhujodi Weavers' Cluster and pays above-market rates to ensure the craft remains economically viable for younger generations.
+                    </p>
+                    <div class="bg-amber-50 border border-amber-100 p-5">
+                        <p class="text-xs uppercase tracking-widest text-amber-700 font-bold mb-2">Your Purchase Impact</p>
+                        <p class="text-sm text-stone-600">This purchase directly supports the Rabari weaving household and contributes to the Khamir Craft Resource Centre's youth training programme — keeping this UNESCO-listed tradition alive.</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-white border border-stone-100 p-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-user text-stone-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-sm mb-1">Lead Weaver: Deviben Rabari</p>
+                                <p class="text-xs text-stone-400 leading-relaxed">Third-generation kilim weaver from Bhujodi village, Kutch. Deviben learned the interlocking weft technique from her grandmother at age 9 and has been weaving professionally for 22 years. She is one of only a handful of weavers who still uses the traditional ground loom rather than the upright frame.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-stone-100 p-6">
+                        <p class="text-xs uppercase tracking-widest text-stone-400 mb-3">Cluster Stats</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">400+</p><p class="text-xs text-stone-400">Years of Tradition</p></div>
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">UNESCO</p><p class="text-xs text-stone-400">Heritage Listed</p></div>
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">0</p><p class="text-xs text-stone-400">Synthetic Dyes Used</p></div>
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">100%</p><p class="text-xs text-stone-400">Memory-Woven</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-care" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-2xl font-serif mb-6">Caring for Your Kilim</h2>
+                    <div class="space-y-5">
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Shake & Beat Outdoors</p>
+                                <p class="text-xs text-stone-400">Kilims are best cleaned by taking them outdoors and shaking firmly, then gently beating the back with a soft broom. This removes embedded dust far more effectively than vacuuming. Do this monthly for best results.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Use on Both Sides</p>
+                                <p class="text-xs text-stone-400">Kilims are reversible — flip periodically to distribute wear evenly. Both sides are equally strong and the pattern appears identical in reverse.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Spot Clean with Cold Water</p>
+                                <p class="text-xs text-stone-400">For spills, blot immediately with a clean white cloth. For stains, dab with cold water and a small amount of mild wool detergent, working from the outside of the stain inward. Never rub.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-times text-red-400 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Avoid Folding for Storage</p>
+                                <p class="text-xs text-stone-400">Always roll kilims for storage — never fold. Folding creates permanent crease lines in the flat weave that are very difficult to remove. Roll around an acid-free tube and store in a breathable cotton sleeve.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-times text-red-400 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">No Beater Bar Attachments</p>
+                                <p class="text-xs text-stone-400">If vacuuming, use only the suction head — never a beater bar or brush roll. The flat weave of a kilim can be damaged and pulled loose by rotating brush attachments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white border border-stone-100 p-8">
+                    <h3 class="font-serif text-lg mb-4">Kilim-Specific Notes</h3>
+                    <p class="text-sm text-stone-500 leading-relaxed mb-6">Kilims are flat-woven without pile, making them significantly more durable for high-traffic areas than pile carpets of equivalent size. The fringe ends are the most vulnerable part — avoid vacuuming over them directly, and check periodically that the end-knots are secure. If a fringe end comes loose, simply re-knot it by hand.</p>
+                    <div class="bg-stone-50 p-4 mb-6">
+                        <p class="text-xs uppercase tracking-widest text-stone-400 mb-2">Wall Hanging Option</p>
+                        <p class="text-xs text-stone-500 leading-relaxed">This kilim can also be displayed as wall art. Attach a wooden dowel through the top fringe loops and hang using picture wire. This is a traditional Rabari display method and keeps the kilim completely flat. The bold geometric pattern makes an exceptional visual statement at this scale.</p>
+                    </div>
+                    <p class="text-xs text-stone-400">This kilim is covered by our Lifetime Structural Guarantee. Any weft separation or fringe failure will be repaired free of charge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 text-center text-xs">
+            <p>&copy; 2026 Rug & Loom Heritage Carpets. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('rugCart')) || [];
+            document.getElementById('cart-count').textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+        }
+
+        function switchTab(tab, btn) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('active'); el.classList.add('text-stone-400'); });
+            document.getElementById('tab-' + tab).classList.remove('hidden');
+            btn.classList.add('active');
+            btn.classList.remove('text-stone-400');
+        }
+
+        function addToCart() {
+            let cart = JSON.parse(localStorage.getItem('rugCart')) || [];
+            const existing = cart.find(item => item.name === 'Nomadic Geometric Kilim');
+            if (existing) { existing.quantity++; } else {
+                cart.push({ name: 'Nomadic Geometric Kilim', price: 68000, img: 'http://127.0.0.1:5001/images/Carpet7.jpg', quantity: 1 });
+            }
+            localStorage.setItem('rugCart', JSON.stringify(cart));
+            updateCartCount();
+            const btn = document.getElementById('atc-btn');
+            btn.textContent = '✓ Added to Cart';
+            btn.style.backgroundColor = '#92400e';
+            setTimeout(() => { btn.innerHTML = '<i class="fas fa-shopping-bag mr-2"></i> Add to Cart'; btn.style.backgroundColor = ''; }, 2000);
+        }
+
+        updateCartCount();
+    </script>
+</body>
+</html>

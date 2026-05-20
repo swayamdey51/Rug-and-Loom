@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziegler Terracotta Classic | Rug & Loom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        img { background-color: #e7e5e4; }
+        .tab-btn { border-bottom: 2px solid transparent; transition: all 0.2s; }
+        .tab-btn.active { border-bottom: 2px solid #92400e; color: #92400e; }
+    </style>
+</head>
+<body class="bg-[#FCFAF7] text-stone-800 antialiased">
+    <div class="bg-stone-900 text-stone-100 text-[11px] uppercase tracking-[0.2em] py-2.5 text-center font-semibold">
+        Heritage craftsmanship delivered worldwide • Free Design Consultation
+    </div>
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="http://127.0.0.1:5001/" class="text-2xl font-serif font-bold tracking-tighter text-stone-900">Rug<span class="text-amber-700">&</span>Loom</a>
+                <div class="hidden md:flex space-x-10 text-sm font-medium tracking-wide">
+                    <a href="http://127.0.0.1:5001/traditional" class="text-stone-600 hover:text-amber-800 transition">Traditional</a>
+                    <a href="http://127.0.0.1:5001/contemporary" class="text-stone-600 hover:text-amber-800 transition">Contemporary</a>
+                    <a href="http://127.0.0.1:5001/kilims" class="text-stone-600 hover:text-amber-800 transition">Kilims</a>
+                    <a href="http://127.0.0.1:5001/bespoke" class="text-stone-600 hover:text-amber-800 transition">Bespoke</a>
+                </div>
+                <a href="http://127.0.0.1:5001/cart" class="text-stone-600 hover:text-stone-900 relative py-2">
+                    <i class="fas fa-shopping-bag text-lg"></i>
+                    <span id="cart-count" class="absolute top-0 -right-2 bg-red-600 text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-6 py-4 text-xs text-stone-400">
+        <a href="http://127.0.0.1:5001/" class="hover:text-stone-600">Home</a>
+        <span class="mx-2">›</span>
+        <a href="http://127.0.0.1:5001/traditional" class="hover:text-stone-600">Traditional</a>
+        <span class="mx-2">›</span>
+        <span class="text-stone-600">Ziegler Terracotta Classic</span>
+    </div>
+
+    <section class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-16 reveal">
+        <div>
+            <div class="aspect-[4/5] overflow-hidden bg-white shadow-lg">
+                <img src="http://127.0.0.1:5001/images/Carpet6.jpg" alt="Ziegler Terracotta Classic" class="w-full h-full object-cover">
+            </div>
+        </div>
+        <div class="flex flex-col justify-center">
+            <p class="text-xs uppercase tracking-[0.3em] text-amber-700 mb-3">Heritage Persian · Hand-Knotted</p>
+            <h1 class="text-4xl font-serif mb-4 leading-tight">Ziegler Terracotta<br>Classic</h1>
+            <div class="flex items-baseline gap-4 mb-6">
+                <span class="text-3xl font-serif text-amber-800 font-bold">&#8377;3,10,000</span>
+                <span class="text-xs text-stone-400 uppercase tracking-widest">Incl. of all taxes</span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-8 bg-white border border-stone-100 p-5">
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Size</p>
+                    <p class="text-sm font-medium">8 × 10 ft</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Material</p>
+                    <p class="text-sm font-medium">Hand-Spun Afghan Wool</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Knot Density</p>
+                    <p class="text-sm font-medium">80 Knots per sq. inch</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Weaving Time</p>
+                    <p class="text-sm font-medium">~12 Months</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Origin</p>
+                    <p class="text-sm font-medium">Bhadohi, Uttar Pradesh</p>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Pile Height</p>
+                    <p class="text-sm font-medium">10mm (High)</p>
+                </div>
+            </div>
+            <button onclick="addToCart()" id="atc-btn" class="w-full bg-stone-900 text-white py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-amber-800 transition mb-4">
+                <i class="fas fa-shopping-bag mr-2"></i> Add to Cart
+            </button>
+            <p class="text-center text-xs text-stone-400 flex items-center justify-center gap-2 mb-8">
+                <i class="fas fa-truck"></i> Free delivery · <i class="fas fa-undo"></i> 30-day returns
+            </p>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 pb-20 reveal">
+        <div class="border-b border-stone-200 flex gap-8 mb-8">
+            <button class="tab-btn active pb-3 text-sm font-medium" onclick="switchTab('story', this)">The Story</button>
+            <button class="tab-btn pb-3 text-sm font-medium text-stone-400" onclick="switchTab('craft', this)">The Craft</button>
+            <button class="tab-btn pb-3 text-sm font-medium text-stone-400" onclick="switchTab('community', this)">The Community</button>
+            <button class="tab-btn pb-3 text-sm font-medium text-stone-400" onclick="switchTab('care', this)">Care Guide</button>
+        </div>
+
+        <div id="tab-story" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-2xl font-serif mb-4">A Design Born in a Merchant's Archive</h2>
+                <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                    In the 1880s, the Manchester textile firm of Ziegler & Co. commissioned Persian master weavers to redesign traditional Mahal carpets for European drawing rooms. The result — looser floral fields, softened palettes, and generous negative space — became one of the most beloved carpet aesthetics in history. This piece is a direct homage to that tradition, reinterpreted by the weavers of Bhadohi using materials entirely sourced from the Indian subcontinent.
+                </p>
+                <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                    The terracotta and ivory palette of this carpet is drawn from the walls of old havelis in Rajasthan — the sun-bleached ochre of clay bricks, the warmth of aged plaster, the rust of iron-oxide soil after monsoon. These are colours that make a room feel inhabited, lived-in, and deeply at ease.
+                </p>
+                <p class="text-stone-500 text-sm leading-relaxed">
+                    At 8 × 10 feet and with a pile height of 10mm, this is a carpet designed to anchor an entire room — to be the first thing a guest notices and the last thing they remember. It is the largest and most labour-intensive piece in the New Arrivals collection.
+                </p>
+            </div>
+            <div class="bg-white border border-stone-100 p-8">
+                <h3 class="text-lg font-serif mb-6">Why &#8377;3,10,000?</h3>
+                <div class="space-y-4">
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-clock text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">12 Months of Labour</p>
+                            <p class="text-xs text-stone-400">Two master weavers working 8 hours a day for a full year. The scale and knot count make this the most time-intensive carpet in our collection.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-feather-alt text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">Hand-Spun Afghan Wool</p>
+                            <p class="text-xs text-stone-400">Sourced from Ghazni sheep, known for producing the finest, most lustrous wool in Asia. The irregular hand-spun twist gives each strand a natural texture impossible to replicate by machine.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-palette text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">Vegetable-Oxide Dyes</p>
+                            <p class="text-xs text-stone-400">Terracotta tones from pomegranate rind, iron mordant, and red clay. These natural dyes will mellow and deepen with age — the carpet will look better in 20 years than it does today.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-ruler-combined text-amber-700 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium mb-1">Room-Scale Masterwork</p>
+                            <p class="text-xs text-stone-400">At 8 × 10 ft, this carpet contains over 4.6 million individual knots. Maintaining pattern integrity at this scale requires decades of master-level experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-craft" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">1</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Wool Sourcing & Hand-Spinning</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">Raw fleece from Ghazni sheep is cleaned and hand-carded in Afghanistan before being shipped to Bhadohi. It is then hand-spun on traditional wooden charkhas, giving the yarn a distinctive irregular texture that holds dye more deeply than machine-spun alternatives.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">2</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Vegetable Dyeing</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">The terracotta is achieved through a two-bath process: first pomegranate rind mordant, then red clay suspension. Each batch is dyed separately to create the subtle colour variation characteristic of authentic Ziegler-style rugs.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">3</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Warping the Loom</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">Cotton warp threads are stretched on a vertical wooden loom — the same design used for centuries in Persian workshops. The warp is measured and set for exact dimensions; any error at this stage cannot be corrected later.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">4</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Asymmetric Knotting</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">The Persian Senneh asymmetric knot is tied individually around each pair of warp threads. Two weavers work side by side across the 8-foot width, each responsible for their half of the design, requiring constant coordination.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">5</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Washing & Stretching</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">The finished carpet is hand-washed in cold water with a mild lanolin solution, then stretched to exact dimensions on a wooden frame and sun-dried for five days. This step also softens the carpet to its final, supple texture.</p>
+                </div>
+                <div class="bg-white border border-stone-100 p-6">
+                    <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+                        <span class="text-amber-700 font-serif font-bold">6</span>
+                    </div>
+                    <h3 class="font-medium mb-2">Hand Shearing & Finishing</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">The pile is hand-sheared to a consistent 10mm height using traditional scissors. Edges are overcast in matching wool to prevent fraying. A final inspection checks every square inch for knot consistency before the carpet is approved for sale.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-community" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-2xl font-serif mb-4">The Weavers of Bhadohi</h2>
+                    <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                        Bhadohi, in eastern Uttar Pradesh, is known as the "Carpet City of India" — a region with over 600 years of continuous weaving history. The town and its surrounding villages are home to more than 500,000 people engaged in the carpet trade, from wool traders to master weavers to dye specialists.
+                    </p>
+                    <p class="text-stone-500 text-sm leading-relaxed mb-4">
+                        The Ziegler Terracotta Classic was woven by the Ansari Weaving House — a family operation now in its fifth generation, founded in 1921 by Ustad Bashir Ahmad Ansari. The current lead weaver, his great-great-grandson Farrukh Ansari, trained under his father from age 10 and received the Shilp Guru award from the Ministry of Textiles in 2019.
+                    </p>
+                    <p class="text-stone-500 text-sm leading-relaxed mb-6">
+                        Rug & Loom's partnership with the Ansari Weaving House began in 2021. Under our agreement, 55% of the final sale price goes directly to the weaving household — and we provide advance payment before weaving begins, so artisans are never dependent on a sale to fund their work.
+                    </p>
+                    <div class="bg-amber-50 border border-amber-100 p-5">
+                        <p class="text-xs uppercase tracking-widest text-amber-700 font-bold mb-2">Your Purchase Impact</p>
+                        <p class="text-sm text-stone-600">This purchase provides approximately 12 months of primary income to the Ansari family and supports two apprentice weavers currently training in the household.</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-white border border-stone-100 p-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-user text-stone-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-sm mb-1">Lead Weaver: Farrukh Ansari</p>
+                                <p class="text-xs text-stone-400 leading-relaxed">5th generation master weaver and Shilp Guru awardee. Farrukh specialises in large-format Persian-style carpets and is one of only a handful of weavers in Bhadohi who still hand-spins the warp cotton himself. He currently trains two apprentices in the family workshop.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-stone-100 p-6">
+                        <p class="text-xs uppercase tracking-widest text-stone-400 mb-3">Workshop Stats</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">5th</p><p class="text-xs text-stone-400">Generation Weavers</p></div>
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">100+</p><p class="text-xs text-stone-400">Years of Operation</p></div>
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">55%</p><p class="text-xs text-stone-400">Revenue to Artisans</p></div>
+                            <div><p class="text-2xl font-serif font-bold text-amber-800">2019</p><p class="text-xs text-stone-400">Shilp Guru Award</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-care" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-2xl font-serif mb-6">Caring for Your Ziegler</h2>
+                    <div class="space-y-5">
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Vacuum Regularly</p>
+                                <p class="text-xs text-stone-400">Vacuum weekly in the direction of the pile without a beater bar. The 10mm high pile traps dust more readily than low-pile rugs — regular vacuuming is essential.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Rotate Every 6 Months</p>
+                                <p class="text-xs text-stone-400">Rotate 180° every 6 months to distribute foot traffic evenly and prevent uneven pile compression in high-use areas.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Use a Quality Rug Pad</p>
+                                <p class="text-xs text-stone-400">A breathable felt and rubber rug pad is essential for a carpet of this weight and size. It prevents floor abrasion, reduces slippage, and extends the life of the carpet backing.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-times text-red-400 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Avoid Prolonged Sunlight</p>
+                                <p class="text-xs text-stone-400">While vegetable dyes are stable, prolonged direct sunlight over years will cause gradual fading of the terracotta tones. Use UV-filtering glass or curtains near large windows.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-times text-red-400 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium mb-1">Never Machine Wash</p>
+                                <p class="text-xs text-stone-400">Machine washing will destroy the knot structure and permanently distort the pile. Professional hand-washing every 3–5 years is recommended.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white border border-stone-100 p-8">
+                    <h3 class="font-serif text-lg mb-4">High-Pile Specific Care</h3>
+                    <p class="text-sm text-stone-500 leading-relaxed mb-6">New high-pile carpets will shed fine fibres for the first 2–3 months of use. This is completely normal and not a sign of quality loss — it is simply loose fibres from the weaving process working their way free. Vacuuming frequently during this period will resolve it quickly.</p>
+                    <div class="bg-stone-50 p-4 mb-6">
+                        <p class="text-xs uppercase tracking-widest text-stone-400 mb-2">Pile Restoration Tip</p>
+                        <p class="text-xs text-stone-500 leading-relaxed">If the pile becomes flattened in high-traffic areas, lightly mist with cold water and use a soft-bristle brush to gently lift the fibres back to their original direction. Allow to dry naturally — never use heat.</p>
+                    </div>
+                    <p class="text-xs text-stone-400">This carpet is covered by our Lifetime Structural Guarantee. Any knot failure or foundation damage will be repaired free of charge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 text-center text-xs">
+            <p>&copy; 2026 Rug & Loom Heritage Carpets. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('rugCart')) || [];
+            document.getElementById('cart-count').textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+        }
+
+        function switchTab(tab, btn) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('active'); el.classList.add('text-stone-400'); });
+            document.getElementById('tab-' + tab).classList.remove('hidden');
+            btn.classList.add('active');
+            btn.classList.remove('text-stone-400');
+        }
+
+        function addToCart() {
+            let cart = JSON.parse(localStorage.getItem('rugCart')) || [];
+            const existing = cart.find(item => item.name === 'Ziegler Terracotta Classic');
+            if (existing) { existing.quantity++; } else {
+                cart.push({ name: 'Ziegler Terracotta Classic', price: 310000, img: 'http://127.0.0.1:5001/images/Carpet6.jpg', quantity: 1 });
+            }
+            localStorage.setItem('rugCart', JSON.stringify(cart));
+            updateCartCount();
+            const btn = document.getElementById('atc-btn');
+            btn.textContent = '✓ Added to Cart';
+            btn.style.backgroundColor = '#92400e';
+            setTimeout(() => { btn.innerHTML = '<i class="fas fa-shopping-bag mr-2"></i> Add to Cart'; btn.style.backgroundColor = ''; }, 2000);
+        }
+
+        updateCartCount();
+    </script>
+</body>
+</html>

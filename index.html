@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rug & Loom | Artisanal Hand-Knotted Carpets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,300&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        
+        /* Scroll Reveal Animation */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Custom Typewriter Cursor */
+        .cursor { display: inline-block; width: 3px; background-color: white; height: 0.9em; vertical-align: middle; margin-left: 4px; animation: blink 1s step-end infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Pure CSS Fade-ins */
+        @keyframes slideUpFade {
+            0% { opacity: 0; transform: translateY(15px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .auto-fade { opacity: 0; animation: slideUpFade 1.2s ease-out forwards; }
+        .delay-1 { animation-delay: 0.5s; }
+        .delay-2 { animation-delay: 2s; }
+
+        /* Cinematic Hero Image Reveal */
+        @keyframes cinematicReveal {
+            0% { opacity: 0; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+        .hero-zoom {
+            animation: cinematicReveal 4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        /* --- Morphing Hamburger Menu Icon --- */
+        .nav-icon-wrapper { width: 30px; height: 20px; position: relative; cursor: pointer; }
+        .nav-line { width: 100%; height: 2px; background-color: #1c1917; transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); position: absolute; }
+        .line-1 { top: 0; }
+        .line-2 { top: 9px; }
+        .line-3 { top: 18px; }
+        
+        .menu-open .line-1 { transform: translateY(9px) rotate(45deg); background-color: #fff; }
+        .menu-open .line-2 { transform: scaleX(0); opacity: 0; }
+        .menu-open .line-3 { transform: translateY(-9px) rotate(-45deg); background-color: #fff; }
+
+        /* Sidebar Links Staggered Entry */
+        .sidebar-link { opacity: 0; transform: translateX(-25px); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+        .menu-active .sidebar-link { opacity: 1; transform: translateX(0); }
+
+        /* ─── ADVANCED GEOMETRIC SPLASH LOADING MATRIX ─── */
+        #splash-container {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #141210;
+            overflow: hidden;
+            transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+            pointer-events: none;
+        }
+
+        #splash-bg-image {
+            position: absolute;
+            inset: 0;
+            background-image: url('http://127.0.0.1:5001/images/Loading.PNG');
+            background-size: cover;
+            background-position: center;
+            opacity: 1;
+            transition: opacity 1.4s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 1;
+        }
+
+        #splash-dark-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(20, 18, 16, 0.8);
+            z-index: 2;
+            transition: background-color 1.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Standalone traveling logo container */
+        #kinetic-logo-frame {
+            position: absolute;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: scale(2.8);
+            transition: all 1.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        #kinetic-logo-text {
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        /* Narrative manifestation text below logo during pause */
+        #manifesto-text-block {
+            position: absolute;
+            margin-top: 90px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.8s ease-out;
+            color: #d6d3d1;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5em;
+            font-weight: 600;
+            z-index: 3;
+            white-space: nowrap;
+        }
+
+        #manifesto-text-block.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Global layout initialization hide state */
+        .site-mount-hidden { opacity: 0; }
+        .site-mount-visible { opacity: 1; transition: opacity 1.4s cubic-bezier(0.25, 1, 0.5, 1); }
+    </style>
+</head>
+<body class="bg-[#FCFAF7] text-stone-800 antialiased min-h-screen relative overflow-x-hidden">
+
+    <div id="splash-container">
+        <div id="splash-bg-image"></div>
+        <div id="splash-dark-overlay"></div>
+        
+        <div id="kinetic-logo-frame">
+            <h1 id="kinetic-logo-text" class="text-2xl font-serif font-bold tracking-tighter">
+                Rug<span id="kinetic-amp" class="text-white transition-colors duration-700">&</span>Loom
+            </h1>
+        </div>
+        
+        <div id="manifesto-text-block">Archiving Himalayan Heritage</div>
+    </div>
+
+    <div id="main-site-content" class="site-mount-hidden">
+
+        <div class="bg-stone-900 text-stone-100 text-[11px] uppercase tracking-[0.2em] py-2.5 text-center font-semibold">
+            Heritage craftsmanship delivered worldwide • Free Design Consultation
+        </div>
+
+        <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-stone-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center relative">
+                
+                <div class="absolute left-4 sm:left-6 lg:left-8 z-50 flex items-center">
+                    <div id="sidebar-toggle" class="nav-icon-wrapper" onclick="toggleSidebar()">
+                        <span class="nav-line line-1"></span>
+                        <span class="nav-line line-2"></span>
+                        <span class="nav-line line-3"></span>
+                    </div>
+                </div>
+
+                <div class="w-full flex justify-center">
+                    <div id="nav-logo-destination-target" class="h-8 min-w-[130px] flex items-center justify-center relative">
+                        </div>
+                </div>
+
+                <div class="absolute right-4 sm:right-6 lg:right-8 flex items-center space-x-6">
+                    <button class="text-stone-600 hover:text-stone-900 transition"><i class="fas fa-search"></i></button>
+                    <a href="http://127.0.0.1:5001/cart" class="text-stone-600 hover:text-stone-900 relative py-2 transition">
+                        <i class="fas fa-shopping-bag text-lg"></i>
+                        <span id="cart-count" class="absolute top-0 -right-2 bg-red-600 text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="sidebar-overlay" class="fixed inset-0 bg-stone-950/40 backdrop-blur-md opacity-0 pointer-events-none z-40 transition-all duration-500" onclick="toggleSidebar()"></div>
+        
+        <div id="sidebar-drawer" class="fixed top-0 left-0 bottom-0 w-[85vw] sm:w-[400px] bg-stone-950 text-stone-400 z-40 -translate-x-full transition-transform duration-500 cubic-bezier(0.25, 1, 0.5, 1) flex flex-col justify-between p-8 pt-32">
+            
+            <div class="flex flex-col space-y-8 font-serif text-2xl tracking-wide text-stone-200">
+                <a href="http://127.0.0.1:5001/?skipIntro=true" class="sidebar-link hover:text-amber-500 transition duration-300" style="transition-delay: 150ms;">Home</a>
+                <a href="http://127.0.0.1:5001/our-story" class="sidebar-link hover:text-amber-500 transition duration-300" style="transition-delay: 220ms;">Our Story</a>
+                <a href="http://127.0.0.1:5001/craftsmanship" class="sidebar-link hover:text-amber-500 transition duration-300" style="transition-delay: 290ms;">Our Craftsmanship</a>
+                <a href="http://127.0.0.1:5001/cart" class="sidebar-link hover:text-amber-500 transition duration-300" style="transition-delay: 360ms;">Shopping Cart</a>
+            </div>
+
+            <div class="border-t border-stone-800 pt-8 space-y-6">
+                <div class="flex flex-col space-y-4 text-xs uppercase tracking-[0.2em] font-semibold text-stone-300">
+                    <a href="#" class="sidebar-link hover:text-amber-500 transition duration-300 flex items-center" style="transition-delay: 430ms;">
+                        <i class="far fa-user mr-3.5 text-sm"></i> Login / Register
+                    </a>
+                    <a href="mailto:studio@rugandloom.com" class="sidebar-link hover:text-amber-500 transition duration-300 flex items-center" style="transition-delay: 500ms;">
+                        <i class="far fa-envelope mr-3.5 text-sm"></i> Contact Us
+                    </a>
+                </div>
+                
+                <p class="sidebar-link text-[10px] text-stone-600 font-light leading-relaxed" style="transition-delay: 570ms;">
+                    Rug & Loom Archive Project v2.0<br>&copy; 2026 All Rights Reserved.
+                </p>
+            </div>
+        </div>
+
+        <header class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="http://127.0.0.1:5001/images/Hero.jpg" alt="Hero" class="w-full h-full object-cover hero-zoom">
+                <div class="absolute inset-0 bg-stone-900/60"></div>
+            </div>
+            <div class="relative z-10 w-full">
+                <div class="max-w-2xl mx-auto text-center px-4">
+                    
+                    <p class="auto-fade delay-1 text-amber-500 text-xs uppercase tracking-[0.4em] font-bold mb-6 drop-shadow-md">
+                        A Commitment to the himalayan heritage
+                    </p>
+
+                    <h1 class="text-6xl md:text-8xl font-serif text-white mb-8 tracking-tight drop-shadow-lg min-h-[72px] md:min-h-[115px] flex justify-center items-center">
+                        <span id="typewriter-text"></span><span class="cursor"></span>
+                    </h1>
+
+                    <p class="auto-fade delay-2 text-stone-200 max-w-lg mx-auto text-sm md:text-base font-light leading-relaxed mb-12 drop-shadow-md">
+                        Discover a curated collection of rare, hand-knotted masterpieces. Preserving centuries of weaving heritage from the heart of the Himalayas.
+                    </p>
+
+                    <div class="auto-fade delay-2 flex flex-col sm:flex-row gap-6 justify-center items-center">
+                        <a href="#collection-grid" class="w-full sm:w-auto bg-stone-100 text-stone-900 px-12 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-white transition duration-300 shadow-xl">
+                            Shop Collection
+                        </a>
+                        <a href="http://127.0.0.1:5001/craftsmanship" class="w-full sm:w-auto border border-stone-100/40 text-white px-12 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-stone-100/10 transition duration-300 backdrop-blur-sm">
+                            Discover the Craft
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <section id="collection-grid" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal border-b border-stone-200 pb-6">
+                <div>
+                    <span class="text-amber-700 text-xs font-bold uppercase tracking-[0.4em] mb-3 block">Exclusive Offerings</span>
+                    <h2 class="text-4xl md:text-5xl font-serif text-stone-900 tracking-tight">Curated <span class="italic font-light text-stone-500">Collection</span></h2>
+                </div>
+                <div class="text-right mt-6 md:mt-0">
+                    <p class="text-stone-500 text-sm md:text-base font-light tracking-wide max-w-xs mb-3">
+                        Masterpieces meticulously woven for the modern sanctuary.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="group cursor-pointer reveal">
+                    <div class="relative overflow-hidden bg-stone-100 aspect-[3/4] mb-4">
+                        <img src="http://127.0.0.1:5001/images/Carpet4.jpg" alt="Sultani Blue Hand-Knotted" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none"></div>
+                        
+                        <a href="http://127.0.0.1:5001/product/sultani" class="absolute inset-0 z-10 block"></a>
+                        
+                        <button class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 bg-white text-stone-900 px-6 py-2 text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition duration-300 hover:bg-stone-900 hover:text-white w-10/12 z-20" data-name="Sultani Blue Hand-Knotted" data-price="245000" data-img="http://127.0.0.1:5001/images/Carpet4.jpg">Add to Cart</button>
+                    </div>
+                    <h3 class="font-serif text-lg text-stone-900"><a href="http://127.0.0.1:5001/product/sultani">Sultani Blue Hand-Knotted</a></h3>
+                    <p class="text-stone-500 text-sm">&#8377; 2,45,000</p>
+                </div>
+                
+                <div class="group cursor-pointer reveal" style="transition-delay: 100ms;">
+                    <div class="relative overflow-hidden bg-stone-100 aspect-[3/4] mb-4">
+                        <img src="http://127.0.0.1:5001/images/Carpet5.jpg" alt="Earth Silk Minimalist" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none"></div>
+                        
+                        <a href="http://127.0.0.1:5001/product/earthsilk" class="absolute inset-0 z-10 block"></a>
+                        
+                        <button class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 bg-white text-stone-900 px-6 py-2 text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition duration-300 hover:bg-stone-900 hover:text-white w-10/12 z-20" data-name="Earth Silk Minimalist" data-price="189000" data-img="http://127.0.0.1:5001/images/Carpet5.jpg">Add to Cart</button>
+                    </div>
+                    <h3 class="font-serif text-lg text-stone-900"><a href="http://127.0.0.1:5001/product/earthsilk">Earth Silk Minimalist</a></h3>
+                    <p class="text-stone-500 text-sm">&#8377; 1,89,000</p>
+                </div>
+
+                <div class="group cursor-pointer reveal" style="transition-delay: 200ms;">
+                    <div class="relative overflow-hidden bg-stone-100 aspect-[3/4] mb-4">
+                        <img src="http://127.0.0.1:5001/images/Carpet7.jpg" alt="Nomadic Geometric Kilim" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none"></div>
+                        
+                        <a href="http://127.0.0.1:5001/product/kilim" class="absolute inset-0 z-10 block"></a>
+                        
+                        <button class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 bg-white text-stone-900 px-6 py-2 text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition duration-300 hover:bg-stone-900 hover:text-white w-10/12 z-20" data-name="Nomadic Geometric Kilim" data-price="68000" data-img="http://127.0.0.1:5001/images/Carpet7.jpg">Add to Cart</button>
+                    </div>
+                    <h3 class="font-serif text-lg text-stone-900"><a href="http://127.0.0.1:5001/product/kilim">Nomadic Geometric Kilim</a></h3>
+                    <p class="text-stone-500 text-sm">&#8377; 68,000</p>
+                </div>
+
+                <div class="group cursor-pointer reveal" style="transition-delay: 300ms;">
+                    <div class="relative overflow-hidden bg-stone-100 aspect-[3/4] mb-4">
+                        <img src="http://127.0.0.1:5001/images/Carpet6.jpg" alt="Ziegler Terracotta Classic" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none"></div>
+                        
+                        <a href="http://127.0.0.1:5001/product/ziegler" class="absolute inset-0 z-10 block"></a>
+                        
+                        <button class="add-to-cart-btn absolute bottom-4 left-1/2 -translate-x-1/2 bg-white text-stone-900 px-6 py-2 text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition duration-300 hover:bg-stone-900 hover:text-white w-10/12 z-20" data-name="Ziegler Terracotta Classic" data-price="310000" data-img="http://127.0.0.1:5001/images/Carpet6.jpg">Add to Cart</button>
+                    </div>
+                    <h3 class="font-serif text-lg text-stone-900"><a href="http://127.0.0.1:5001/product/ziegler">Ziegler Terracotta Classic</a></h3>
+                    <p class="text-stone-500 text-sm">&#8377; 3,10,000</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-stone-900 text-stone-100 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="h-96 lg:h-auto relative overflow-hidden">
+                    <img src="http://127.0.0.1:5001/images/Pahaad.jpg" alt="Himalayan Valleys" class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-1000">
+                </div>
+                <div class="p-12 lg:p-24 flex flex-col justify-center">
+                    <span class="text-amber-500 text-xs font-bold uppercase tracking-[0.3em] mb-4">The Process</span>
+                    <h2 class="text-4xl md:text-5xl font-serif mb-6 text-white tracking-tight">Our Craftsmanship</h2>
+                    <p class="text-stone-400 text-sm md:text-base font-light leading-relaxed mb-6">
+                        True luxury cannot be rushed. From the hand-spun wool of Ladakh to the intricate knots tied in Chamoli, every Rug & Loom piece is a testament to the art of slow creation. 
+                    </p>
+                    <p class="text-stone-400 text-sm md:text-base font-light leading-relaxed mb-10">
+                        Our foundation is built upon an unwavering commitment to the people behind the looms. By partnering directly with a dedicated community of about 1,000 artisans, we honor our ethical obligation to ensure their continued work, securing both their prosperity and the survival of centuries-old weaving heritage.
+                    </p>
+                    <div>
+                        <a href="http://127.0.0.1:5001/craftsmanship" class="inline-block border border-amber-700/50 text-amber-500 px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-amber-700 hover:text-white transition duration-300">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-stone-50 text-stone-900 reveal border-t border-stone-200">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="p-12 lg:p-24 flex flex-col justify-center order-2 lg:order-1">
+                    <span class="text-amber-700 text-xs font-bold uppercase tracking-[0.3em] mb-4">The Founders</span>
+                    <h2 class="text-4xl md:text-5xl font-serif mb-6 tracking-tight">Our Story</h2>
+                    <p class="text-stone-500 text-sm md:text-base font-light leading-relaxed mb-6">
+                        From the high-altitude passes of Spiti to the rhythmic clatter of the loom, our journey began not as saviors, but as students of a masterful art form.
+                    </p>
+                    <p class="text-stone-500 text-sm md:text-base font-light leading-relaxed mb-10">
+                        We aren't here for charity. We are here to archive genius. Discover how two high school friends turned a vision incubated at IIM Bangalore into a mission to document, protect, and elevate the endangered legacy of Indian hand-weaving.
+                    </p>
+                    <div>
+                        <a href="http://127.0.0.1:5001/our-story" class="inline-block bg-stone-900 text-white px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-amber-800 transition duration-300 shadow-lg">
+                            Read Our Story
+                        </a>
+                    </div>
+                </div>
+                <div class="h-96 lg:h-auto relative overflow-hidden order-1 lg:order-2">
+                    <img src="http://127.0.0.1:5001/images/OurStory.JPG" alt="Our Story" class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-1000">
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-stone-900 text-stone-400 py-20 border-t border-stone-800">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div>
+                    <h4 class="text-white font-serif text-xl mb-6">Rug & Loom</h4>
+                    <p class="text-sm leading-relaxed">Dedicated to preserving the art of hand-weaving. Each piece in our collection is sustainably sourced and ethically produced.</p>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">Navigation</h4>
+                    <ul class="text-sm space-y-3">
+                        <li><a href="http://127.0.0.1:5001/our-story" class="hover:text-amber-500 transition">Our Story</a></li>
+                        <li><a href="http://127.0.0.1:5001/craftsmanship" class="hover:text-amber-500 transition">Our Craftsmanship</a></li>
+                        <li><a href="http://127.0.0.1:5001/cart" class="hover:text-amber-500 transition">Shipping Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">Newsletter</h4>
+                    <div class="flex border-b border-stone-700 pb-2">
+                        <input type="email" placeholder="Your Email" class="bg-transparent text-sm w-full outline-none">
+                        <button class="text-white font-bold text-sm">Join</button>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-stone-800 text-center text-xs">
+                <p>&copy; 2026 Rug & Loom Heritage Carpets. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // --- HIGH-END SPLASH MATRIX SYSTEM PIPELINE ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoFrame = document.getElementById('kinetic-logo-frame');
+            const manifestoText = document.getElementById('manifesto-text-block');
+            const splashBg = document.getElementById('splash-bg-image');
+            const splashOverlay = document.getElementById('splash-dark-overlay');
+            const splashContainer = document.getElementById('splash-container');
+            const mainContent = document.getElementById('main-site-content');
+            const navTarget = document.getElementById('nav-logo-destination-target');
+
+            // SMARTRADAR ROUTING BYPASS PARAMETER
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('skipIntro') === 'true') {
+                splashContainer.style.display = 'none';
+                logoFrame.style.display = 'none';
+                mainContent.classList.remove('site-mount-hidden');
+                mainContent.classList.add('site-mount-visible');
+                navTarget.innerHTML = `
+                    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="text-2xl font-serif font-bold tracking-tighter text-stone-900 select-none">
+                        Rug<span class="text-amber-700 font-serif font-bold">&</span>Loom
+                    </a>
+                `;
+                setTimeout(typeWriter, 100);
+                return; 
+            }
+
+            // Beat 1: Zoom out slowly from full-frame scale down to center-stage identity scale
+            setTimeout(() => {
+                logoFrame.style.transform = 'scale(1.3)';
+            }, 300);
+
+            // Beat 2: Pause at center and drop the manifest text block smoothly underneath
+            setTimeout(() => {
+                manifestoText.classList.add('visible');
+            }, 1500);
+
+            // Beat 3: Initialize flight transition sequence
+            setTimeout(() => {
+                manifestoText.style.opacity = '0';
+                manifestoText.style.transition = 'opacity 0.4s ease';
+
+                const targetRect = navTarget.getBoundingClientRect();
+                logoFrame.style.transition = 'all 1.6s cubic-bezier(0.25, 1, 0.5, 1)';
+                
+                const deltaX = (targetRect.left + (targetRect.width / 2)) - (window.innerWidth / 2);
+                const deltaY = (targetRect.top + (targetRect.height / 2)) - (window.innerHeight / 2);
+
+                logoFrame.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(1)`;
+
+                splashBg.style.opacity = '0';
+                splashOverlay.style.backgroundColor = 'rgba(28, 25, 23, 0.6)'; 
+
+                mainContent.classList.remove('site-mount-hidden');
+                mainContent.classList.add('site-mount-visible');
+            }, 3800);
+
+            // Beat 4: SIMULTANEOUS INSTANT HAND-OFF MATRIX
+            setTimeout(() => {
+                navTarget.innerHTML = `
+                    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="text-2xl font-serif font-bold tracking-tighter text-stone-900 select-none">
+                        Rug<span class="text-amber-700 font-serif font-bold">&</span>Loom
+                    </a>
+                `;
+
+                splashContainer.style.opacity = '0';
+                logoFrame.style.opacity = '0';
+
+                setTimeout(() => {
+                    splashContainer.style.display = 'none';
+                    logoFrame.style.display = 'none';
+                    setTimeout(typeWriter, 100);
+                }, 400);
+
+            }, 5400);
+        });
+
+        // --- Sidebar Drawer Logic ---
+        function toggleSidebar() {
+            const toggleBtn = document.getElementById('sidebar-toggle');
+            const drawer = document.getElementById('sidebar-drawer');
+            const overlay = document.getElementById('sidebar-overlay');
+            const body = document.body;
+
+            toggleBtn.classList.toggle('menu-open');
+            
+            if (drawer.classList.contains('-translate-x-full')) {
+                drawer.classList.remove('-translate-x-full');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                body.classList.add('menu-active', 'overflow-hidden');
+            } else {
+                drawer.classList.add('-translate-x-full');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                body.classList.remove('menu-active', 'overflow-hidden');
+            }
+        }
+
+        // --- Typewriter Effect ---
+        const textToType = "Art Underfoot.";
+        const typeTarget = document.getElementById('typewriter-text');
+        let typeIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            if (!typeTarget) return;
+            
+            let speed = isDeleting ? 60 : 120;
+            let currentStr = textToType.substring(0, typeIndex);
+            
+            if (typeIndex <= 4) {
+                typeTarget.innerHTML = currentStr;
+            } else {
+                typeTarget.innerHTML = `Art <span class="italic text-stone-300 font-light">${currentStr.substring(4)}</span>`;
+            }
+
+            if (!isDeleting && typeIndex < textToType.length) {
+                typeIndex++;
+                setTimeout(typeWriter, speed);
+            } else if (isDeleting && typeIndex > 0) {
+                typeIndex--;
+                setTimeout(typeWriter, speed);
+            } else {
+                isDeleting = !isDeleting;
+                setTimeout(typeWriter, isDeleting ? 4000 : 800);
+            }
+        }
+
+        // --- Intersection Observer System ---
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+ 
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('rugCart')) || [];
+            const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').textContent = total;
+        }
+ 
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const product = {
+                    name: button.getAttribute('data-name'),
+                    price: parseInt(button.getAttribute('data-price')),
+                    img: button.getAttribute('data-img'),
+                    quantity: 1
+                };
+                let cart = JSON.parse(localStorage.getItem('rugCart')) || [];
+                const existing = cart.find(item => item.name === product.name);
+                if (existing) { existing.quantity++; } else { cart.push(product); }
+                localStorage.setItem('rugCart', JSON.stringify(cart));
+                updateCartCount();
+                button.textContent = 'Added!';
+                button.style.backgroundColor = '#92400e';
+                setTimeout(() => { button.textContent = 'Add to Cart'; button.style.backgroundColor = ''; }, 1500);
+            });
+        });
+ 
+        updateCartCount();
+    </script>
+</body>
+</html>

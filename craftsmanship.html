@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Craftsmanship | Rug & Loom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,300&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* --- Morphing Hamburger Menu Icon --- */
+        .nav-icon-wrapper { width: 30px; height: 20px; position: relative; cursor: pointer; }
+        .nav-line { width: 100%; height: 2px; background-color: #1c1917; transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); position: absolute; }
+        .line-1 { top: 0; }
+        .line-2 { top: 9px; }
+        .line-3 { top: 18px; }
+        
+        .menu-open .line-1 { transform: translateY(9px) rotate(45deg); background-color: #fff; }
+        .menu-open .line-2 { transform: scaleX(0); opacity: 0; }
+        .menu-open .line-3 { transform: translateY(-9px) rotate(-45deg); background-color: #fff; }
+
+        /* Sidebar Links Staggered Entry */
+        .sidebar-link { opacity: 0; transform: translateX(-25px); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+        .menu-active .sidebar-link { opacity: 1; transform: translateX(0); }
+    </style>
+</head>
+<body class="bg-[#FCFAF7] text-stone-800 antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <div class="bg-stone-900 text-stone-100 text-[11px] uppercase tracking-[0.2em] py-2.5 text-center font-semibold">
+        Heritage craftsmanship delivered worldwide • Free Design Consultation
+    </div>
+
+    <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center relative">
+            
+            <div class="absolute left-4 sm:left-6 lg:left-8 z-50 flex items-center">
+                <div id="sidebar-toggle" class="nav-icon-wrapper" onclick="toggleSidebar()">
+                    <span class="nav-line line-1"></span>
+                    <span class="nav-line line-2"></span>
+                    <span class="nav-line line-3"></span>
+                </div>
+            </div>
+
+            <div class="w-full flex justify-center">
+                <a href="http://127.0.0.1:5001/?skipIntro=true" class="text-2xl font-serif font-bold tracking-tighter text-stone-900 select-none">
+                    Rug<span class="text-amber-700">&amp;</span>Loom
+                </a>
+            </div>
+
+            <div class="absolute right-4 sm:right-6 lg:right-8 flex items-center space-x-6">
+                <button class="text-stone-600 hover:text-stone-900 transition"><i class="fas fa-search"></i></button>
+                <a href="http://127.0.0.1:5001/cart" class="text-stone-600 hover:text-stone-900 relative py-2 transition">
+                    <i class="fas fa-shopping-bag text-lg"></i>
+                    <span id="cart-count" class="absolute top-0 -right-2 bg-red-600 text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="sidebar-overlay" class="fixed inset-0 bg-stone-950/40 backdrop-blur-md opacity-0 pointer-events-none z-40 transition-all duration-500" onclick="toggleSidebar()"></div>
+    
+    <div id="sidebar-drawer" class="fixed top-0 left-0 bottom-0 w-[85vw] sm:w-[400px] bg-stone-950 text-stone-400 z-40 -translate-x-full transition-transform duration-500 cubic-bezier(0.25, 1, 0.5, 1) flex flex-col justify-between p-8 pt-32">
+        
+        <div class="flex flex-col space-y-8 font-serif text-2xl tracking-wide text-stone-200">
+            <a href="http://127.0.0.1:5001/?skipIntro=true" class="sidebar-link hover:text-amber-500 transition duration-300" style="transition-delay: 150ms;">Home</a>
+            <a href="http://127.0.0.1:5001/our-story" class="sidebar-link hover:text-amber-500 transition duration-300" style="transition-delay: 220ms;">Our Story</a>
+            <a href="http://127.0.0.1:5001/craftsmanship" class="sidebar-link hover:text-amber-500 transition duration-300" style="transition-delay: 290ms;">Our Craftsmanship</a>
+            <a href="http://127.0.0.1:5001/cart" class="sidebar-link hover:text-amber-500 transition duration-300" style="transition-delay: 360ms;">Shopping Cart</a>
+        </div>
+
+        <div class="border-t border-stone-800 pt-8 space-y-6">
+            <div class="flex flex-col space-y-4 text-xs uppercase tracking-[0.2em] font-semibold text-stone-300">
+                <a href="#" class="sidebar-link hover:text-amber-500 transition duration-300 flex items-center" style="transition-delay: 430ms;">
+                    <i class="far fa-user mr-3.5 text-sm"></i> Login / Register
+                </a>
+                <a href="mailto:studio@rugandloom.com" class="sidebar-link hover:text-amber-500 transition duration-300 flex items-center" style="transition-delay: 500ms;">
+                    <i class="far fa-envelope mr-3.5 text-sm"></i> Contact Us
+                </a>
+            </div>
+            
+            <p class="sidebar-link text-[10px] text-stone-600 font-light leading-relaxed" style="transition-delay: 570ms;">
+                Rug & Loom Archive Project v2.0<br>&copy; 2026 All Rights Reserved.
+            </p>
+        </div>
+    </div>
+
+    <header class="py-20 bg-stone-900 text-white text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <span class="text-amber-500 text-xs font-bold uppercase tracking-[0.4em] mb-4 block">The Art of Slow Creation</span>
+            <h1 class="text-5xl md:text-6xl font-serif tracking-tight mb-6">Our <span class="italic font-light text-stone-300">Craftsmanship</span></h1>
+            <p class="text-stone-400 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed">
+                A testament to centuries-old weaving ancestry. Exploring the rigorous architectural mathematics behind every knot tied across Ladakh and Chamoli.
+            </p>
+        </div>
+        <div class="absolute inset-0 bg-stone-950/20 z-0"></div>
+    </header>
+
+    <main class="flex-grow max-w-4xl mx-auto px-6 py-24 reveal">
+        <article class="prose prose-stone max-w-none font-light text-stone-600 leading-relaxed space-y-12 text-base md:text-lg">
+            
+            <div>
+                <h2 class="font-serif text-3xl text-stone-900 tracking-tight mb-4">The Material Architecture: Hand-Spun Wool</h2>
+                <p>
+                    Every genuine masterpiece begins long before it reaches the structural loom. We source raw, high-altitude lambswool directly from nomadic herders across the cold desert plains of Ladakh. This specific wool evolves to retain maximum thermal insulation and dense fiber durability, protecting the raw coat against extreme sub-zero thresholds. Once gathered, the fibers are painstakingly hand-carded and hand-spun on traditional spinning wheels—a process that introduces subtle, natural variations in yarn density that mechanical factories can never duplicate.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12 items-center">
+                <div class="bg-stone-50 border border-stone-200/60 p-8">
+                    <h4 class="font-serif text-lg font-bold text-stone-900 mb-2">Vegetal Dye Infusions</h4>
+                    <p class="text-sm text-stone-500 leading-relaxed font-light">
+                        Our yarns undergo open-vat organic color processing utilizing native roots, walnut husks, and wild minerals. This creates deep chromatic complexions that grow richer over decades of environmental exposure.
+                    </p>
+                </div>
+                <div class="bg-stone-50 border border-stone-200/60 p-8">
+                    <h4 class="font-serif text-lg font-bold text-stone-900 mb-2">The Geometry of Knots</h4>
+                    <p class="text-sm text-stone-500 leading-relaxed font-light">
+                        Weaving master communities map highly complex symmetrical design fields completely by memory, structural grid charts, and rhythmic vocal chants passed down over generations.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="font-serif text-3xl text-stone-900 tracking-tight mb-4">Preserving An Ancestral Calculus</h2>
+                <p>
+                    True luxury is inherently an act of temporal defiance—it rejects speed. A single 8x10 hand-knotted carpet can take our artisan communities anywhere from six to twelve months of continuous operational dedication. By maintaining direct, uncompromised equity lines with roughly 1,000 native weavers, we are able to bypass third-party trading markets entirely. This guarantees that the highest share of profit lands squarely back with the creators, safeguarding the survival of endangered creative lineages and keeping their generational legacy alive.
+                </p>
+            </div>
+
+        </article>
+    </main>
+
+    <footer class="bg-stone-900 text-stone-400 py-20 border-t border-stone-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div>
+                <h4 class="text-white font-serif text-xl mb-6">Rug & Loom</h4>
+                <p class="text-sm leading-relaxed">Dedicated to preserving the art of hand-weaving. Each piece in our collection is sustainably sourced and ethically produced.</p>
+            </div>
+            <div>
+                <h4 class="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">Navigation</h4>
+                <ul class="text-sm space-y-3">
+                    <li><a href="http://127.0.0.1:5001/?skipIntro=true" class="hover:text-amber-500 transition">Home</a></li>
+                    <li><a href="http://127.0.0.1:5001/our-story" class="hover:text-amber-500 transition">Our Story</a></li>
+                    <li><a href="http://127.0.0.1:5001/cart" class="hover:text-amber-500 transition">Your Cart</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">Newsletter</h4>
+                <div class="flex border-b border-stone-700 pb-2">
+                    <input type="email" placeholder="Your Email" class="bg-transparent text-sm w-full outline-none">
+                    <button class="text-white font-bold text-sm">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-stone-800 text-center text-xs">
+            <p>&copy; 2026 Rug & Loom Heritage Carpets. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSidebar() {
+            const toggleBtn = document.getElementById('sidebar-toggle');
+            const drawer = document.getElementById('sidebar-drawer');
+            const overlay = document.getElementById('sidebar-overlay');
+            const body = document.body;
+
+            toggleBtn.classList.toggle('menu-open');
+            
+            if (drawer.classList.contains('-translate-x-full')) {
+                drawer.classList.remove('-translate-x-full');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                body.classList.add('menu-active', 'overflow-hidden');
+            } else {
+                drawer.classList.add('-translate-x-full');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                body.classList.remove('menu-active', 'overflow-hidden');
+            }
+        }
+
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('rugCart')) || [];
+            document.getElementById('cart-count').textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+        }
+        updateCartCount();
+    </script>
+</body>
+</html>
